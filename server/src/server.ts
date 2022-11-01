@@ -11,16 +11,10 @@ async function bootstrap() {
     })
 
     fastify.get('/pools/count', async () => {
-        const pool = await prisma.pool.findMany({
-            where: {
-                code: {
-                    startsWith: 'J'
-                }
-            }
-        })
+        const count = await prisma.pool.count()
 
 
-        return { pool }
+        return { count }
     })
 
     await fastify.listen({ port: 3333 })
