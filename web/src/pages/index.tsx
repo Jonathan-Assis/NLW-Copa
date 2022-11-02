@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import * as Img from '../assets'
 
-export default function Home() {
+interface HomeProps {
+  poolCount: number;
+}
+
+
+export default function Home(props:HomeProps) {
   return (
    <div className="max-w-[1124px] h-screen mx-auto grid grid-cols-2 items-center gap-28">
     <main>
@@ -44,7 +49,7 @@ export default function Home() {
             alt="" 
           />
           <div className="flex flex-col">
-            <span className="font-bold text-2xl">+2.034</span>
+            <span className="font-bold text-2xl">+{props.poolCount}</span>
             <span>Bolões criados</span>
           </div>
         </div>
@@ -73,16 +78,16 @@ export default function Home() {
   )
 }
 
-/*
+
 export const getServerSideProps = async () => {
   const response = await fetch('http://localhost:3333/pools/count')
   const data = await response.json()
 
-  console.log(data)
 
   return{
     props:{
-      count: data.count
+      poolCount: data.count
     }
+    
   }
-}*/
+}
