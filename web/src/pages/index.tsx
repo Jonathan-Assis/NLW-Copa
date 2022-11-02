@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import * as Img from '../assets'
+import { api } from '../lib/axios';
 
 interface HomeProps {
   poolCount: number;
+  guessCount: number;
 }
 
 
@@ -62,7 +64,7 @@ export default function Home(props:HomeProps) {
             alt="" 
           />
           <div className="flex flex-col">
-            <span className="font-bold text-2xl">+192.847</span>
+            <span className="font-bold text-2xl">+{props.guessCount}</span>
             <span>Palpites enviados</span>
           </div>
         </div>
@@ -80,13 +82,13 @@ export default function Home(props:HomeProps) {
 
 
 export const getServerSideProps = async () => {
-  const response = await fetch('http://localhost:3333/pools/count')
-  const data = await response.json()
-
+  const poolCountResponse = await api.get('pools/count')
+  const guessCountResponse = await api.get('guesses/count')
 
   return{
     props:{
-      poolCount: data.count
+      poolCount: poolCountResponse.data.count,
+      guessCount: guessCountResponse.data.count
     }
     
   }
