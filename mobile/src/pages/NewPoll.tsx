@@ -2,7 +2,7 @@ import { Heading, Text, VStack } from 'native-base'
 import { Header, Input, Button } from '../components'
 import Logo from '../assets/logo.svg'
 
-export function NewPool(){
+export function NewPoll(){
   return(
     <VStack flex={1} bgColor="gray.900">
       <Header title="Criar novo Bolão" />

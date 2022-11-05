@@ -2,7 +2,7 @@ import { Icon, VStack } from 'native-base'
 import { Octicons } from '@expo/vector-icons'
 import { Button, Header } from '../components'
 
-export function Pools(){
+export function Polls(){
     return(
         <VStack flex={1} bgColor="gray.900">
             <Header title="Meus bolões" />

@@ -1,7 +1,7 @@
 import { Heading, VStack } from 'native-base'
 import { Header, Input, Button } from '../components'
 
-export function FindPool(){
+export function FindPoll(){
   return(
     <VStack flex={1} bgColor="gray.900">
       <Header title="Buscar por Código" />

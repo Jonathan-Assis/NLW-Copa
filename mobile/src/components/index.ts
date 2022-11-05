@@ -1,7 +1,7 @@
 import { Button } from './Button'
 import { ButtonIcon } from './ButtonIcon'
-import { EmptyMyPoolList } from './EmptyMyPoolList'
-import { EmptyPoolList } from './EmptyPoolList'
+import { EmptyMyPollList } from './EmptyMyPollList'
+import { EmptyPollList } from './EmptyPollList'
 import { EmptyRakingList } from './EmptyRakingList'
 import { Flag } from './Flag'
 import { Game } from './Game'
@@ -11,15 +11,15 @@ import { Input } from './Input'
 import { Loading } from './Loading'
 import { Option } from './Option'
 import { Participants } from './Participants'
-import { PoolCard } from './PoolCard'
-import { PoolHeader } from './PoolHeader'
+import { PollCard } from './PollCard'
+import { PollHeader } from './PollHeader'
 import { Team } from './Team'
 
 export {
     Button,
     ButtonIcon,
-    EmptyMyPoolList,
-    EmptyPoolList,
+    EmptyMyPollList,
+    EmptyPollList,
     EmptyRakingList,
     Flag,
     Game,
@@ -29,7 +29,7 @@ export {
     Loading,
     Option,
     Participants,
-    PoolCard,
-    PoolHeader,
+    PollCard,
+    PollHeader,
     Team,
 }
