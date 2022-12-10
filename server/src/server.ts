@@ -1,16 +1,12 @@
 import Fastify from 'fastify'
 import cors from '@fastify/cors'
-import { PrismaClient } from '@prisma/client'
+import jwt from '@fastify/jwt'
 
 import { authRoutes } from './routes/auth'
 import { gameRoutes } from './routes/game'
 import { guessRoutes } from './routes/guess'
 import { pollRoutes } from './routes/polls'
 import { userRoutes } from './routes/user'
-
-const prisma = new PrismaClient({
-    log: ['query'],
-})
 
 async function bootstrap() {
     const fastify = Fastify({
@@ -19,6 +15,11 @@ async function bootstrap() {
 
     await fastify.register(cors, {
         origin: true
+    })
+
+//OBS: Em produção o conteúdo de 'secret' precisará utilizar uma variável de ambiente por questões de segurança!!!
+    await fastify.register(jwt, {
+        secret: 'nlwcopa',
     })
 
     await fastify.register(authRoutes)
