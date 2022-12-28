@@ -4,7 +4,7 @@ import { Header, Input, Button } from '../components'
 export function FindPoll(){
   return(
     <VStack flex={1} bgColor="gray.900">
-      <Header title="Buscar por Código" />
+      <Header title="Buscar por Código" showBackButton={true} />
 
       <VStack mt={8}mx={5} alignItems="center">
         <Heading fontFamily="heading" color="white" fontSize="xl" mb={8} textAlign="center">
