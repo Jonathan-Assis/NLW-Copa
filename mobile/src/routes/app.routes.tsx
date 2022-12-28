@@ -44,6 +44,11 @@ export function AppRoutes() {
                     tabBarLabel: 'Meus bolões'
                 }}
             />
+            <Screen
+                name="FindPoll"
+                component={Pages.FindPoll}
+                options={{ tabBarButton: () => null }}
+            />
         </Navigator>
     )
 }
