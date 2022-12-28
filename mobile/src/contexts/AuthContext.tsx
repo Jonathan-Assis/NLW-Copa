@@ -3,6 +3,8 @@ import * as Google from 'expo-auth-session/providers/google';
 import * as AuthSession from 'expo-auth-session';
 import * as WebBrowser from 'expo-web-browser';
 
+WebBrowser.maybeCompleteAuthSession();
+
 interface UserProps {
     name: string;
     avatarUrl: string;
@@ -30,7 +32,6 @@ export function AuthContextProvider({ children }: AuthProviderProps){
         scopes: ['profile', 'email']
     })
 
-    console.log()
 
     async function signIn(){
         try{
@@ -49,11 +50,11 @@ export function AuthContextProvider({ children }: AuthProviderProps){
     }
 
     useEffect(()=>{
-        if(response?.type ==='success' && response.authentication?.accessToken){
+        if(response?.type === 'success' && response.authentication?.accessToken){
             signInWithGoogle(response.authentication.accessToken);
         }
     },[response])
-
+    
     return(
         <AuthContext.Provider value={{
             signIn, 
