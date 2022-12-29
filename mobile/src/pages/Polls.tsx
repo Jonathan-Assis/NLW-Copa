@@ -59,7 +59,12 @@ export function Polls(){
                         px={5}
                         _contentContainerStyle={{ pb: 20 }}
                         ListEmptyComponent={()=> <EmptyPollList />}
-                        renderItem={({ item }) => <PollCard data={item} />}
+                        renderItem={({ item }) => (
+                            <PollCard 
+                                data={item} 
+                                onPress={() => navigate('Details', { id: item.id })}
+                            />
+                        )}
                     />
             }
         </VStack>
