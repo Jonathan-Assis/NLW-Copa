@@ -49,6 +49,11 @@ export function AppRoutes() {
                 component={Pages.FindPoll}
                 options={{ tabBarButton: () => null }}
             />
+            <Screen
+                name="Details"
+                component={Pages.Details}
+                options={{ tabBarButton: () => null }}
+            />
         </Navigator>
     )
 }
