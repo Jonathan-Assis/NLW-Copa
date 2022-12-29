@@ -15,12 +15,14 @@ export function FindPoll(){
       setIsLoading(true)
 
       if(!code.trim()){
+        return (
         toast.show({
           title: 'Informe o código.',
           placement: 'top',
           bgColor: 'red.500'
-        })
-        setIsLoading(false);
+        }),
+        setIsLoading(false)
+        )
       }
 
       await api.post('/polls/join', { code })
@@ -65,7 +67,7 @@ export function FindPoll(){
 
   return(
     <VStack flex={1} bgColor="gray.900">
-      <Header title="Buscar por Código" showBackButton={true} />
+      <Header title="Buscar por Código" showBackButton />
 
       <VStack mt={8}mx={5} alignItems="center">
         <Heading fontFamily="heading" color="white" fontSize="xl" mb={8} textAlign="center">
